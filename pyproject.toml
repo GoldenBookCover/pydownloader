@@ -1,0 +1,24 @@
+[project]
+name = "pydownloader"
+version = "1.0.3"
+description = "A simple file downloader powered by python"
+readme = "README.md"
+authors = [
+    { name = "GoldenBookCover", email = "ballonrage@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "gdown>=6.0.0",
+    "gitpython>=3.1.46",
+    "pyyaml>=6.0.3",
+    "requests>=2.32.5",
+    "tqdm>=4.67.3",
+    "yt-dlp>=2026.2.4",
+]
+
+[project.scripts]
+pydownloader = "pydownloader:_cli"
+
+[build-system]
+requires = ["uv_build>=0.8.4,<0.11.0"]
+build-backend = "uv_build"

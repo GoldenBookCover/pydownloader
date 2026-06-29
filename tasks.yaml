@@ -1,0 +1,28 @@
+# tasks.yaml — downloader.py example configuration file
+
+settings:
+  max_workers: 3        # Concurrent download of 3 files
+  rate_limit_kb: 1024   # Global rate limit 1 MB/s (0 = no limit)
+
+tasks:
+  # ── HTTP Download (Auto-detected) ────────────────────────────
+  - url: https://releases.ubuntu.com/22.04/ubuntu-22.04-live-server-amd64.iso
+    dest: /tmp/downloads/ubuntu.iso
+
+  # ── Google Drive (Auto-detected) ────────────────────────────
+  - url: https://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgVE2upms/view
+    dest: /tmp/downloads/gdrive/
+
+  # ── YouTube Video (Auto-detected) ────────────────────────────
+  - url: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+    dest: /tmp/downloads/videos/
+    # source_type: youtube   # Optional, auto-detected
+
+  # ── Git Repository Clone (Auto-detected .git suffix) ─────────────────
+  - url: https://github.com/psf/requests.git
+    dest: /tmp/downloads/repos/requests
+
+  # ── Forced type specification example ─────────────────────────────
+  - url: https://example.com/data.csv
+    dest: /tmp/downloads/data.csv
+    source_type: http       # Explicitly specified, skip auto-detection

@@ -1,6 +1,6 @@
 [project]
 name = "pydownloader"
-version = "1.0.3"
+version = "1.0.4"
 description = "A simple file downloader powered by python"
 readme = "README.md"
 authors = [
